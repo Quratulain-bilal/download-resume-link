@@ -1,0 +1,189 @@
+body {
+    background: linear-gradient(135deg, #121212, #1a1a1a);
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    animation: backgroundAnimation 10s ease infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-color: #121212;
+    }
+    100% {
+        background-color: #1a1a1a;
+    }
+}
+
+.form-container {
+    position: relative;
+    padding: 40px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    animation: glowAnimation 1.5s infinite alternate;
+}
+
+@keyframes glowAnimation {
+    0% {
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(0, 255, 255, 1);
+    }
+}
+h1.shiny {
+    font-size: 2.5em;
+    text-align: center;
+    color: #0ff;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 1), 0 0 30px rgba(0, 255, 255, 0.5);
+}
+
+
+input,
+textarea {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 99%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    transition: box-shadow 0.3s, transform 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+input:hover,
+textarea:hover,
+input:focus,
+textarea:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+label::after, input::after, textarea::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: rgba(43, 239, 239, 0.2);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+input:hover::after,
+textarea:hover::after,
+input:focus::after,
+textarea:focus::after {
+    opacity: 1;
+}
+
+input, textarea {
+    text-shadow: 0 0 5px rgba(0, 255, 255, 1), 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.glow-button {
+    background-color: #0ff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 10px 0;
+}
+
+.glow-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 1);
+}
+
+.resume {
+    background: linear-gradient(#000, #333);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    position: relative;
+    animation: glowAnimation 1.5s infinite alternate;
+}
+
+.section {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid rgba(0, 255, 255, 0.5);
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 1);
+}
+
+#shareableLink {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(0, 255, 255, 0.7);
+    border-radius: 8px;
+    color: #ffffff;
+    padding: 12px;
+    margin: 20px auto;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    font-size: 1rem;
+}
+
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 700px) {
+    #shareableLink {
+        font-size: 0.9rem; /* Smaller font size */
+        padding: 8px; /* Slightly reduced padding */
+        width: 95%; /* Adjust width to avoid overflow */
+    }
+}
+
+@media (max-width: 500px) {
+    #shareableLink {
+        font-size: 0.8rem; /* Even smaller font size for small screens */
+        padding: 6px; /* Further reduced padding */
+        width: 90%; /* Fit the container width */
+        border-radius: 6px; /* Adjusted border-radius for smaller screens */
+    }
+}
+
+/* Extra small screens (mobile) */
+@media (max-width: 350px) {
+    #shareableLink {
+        font-size: 0.75rem; /* Minimum readable font size */
+        padding: 5px; /* Minimal padding */
+        width: 85%; /* Make sure it fits well on tiny screens */
+    }
+}
+
+
+
+#shareableLink:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 1);
+}
+
+#downloadBtn {
+    width: 100%;
+    max-width: 200px;
+    margin-left: 5px;
+}
